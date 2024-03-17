@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sivertsen Tredesign Studio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href='https://fonts.googleapis.com/css?family=EB Garamond' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="navigation-bar">
+        <div class="logo">
+          <a class="logo-link" href="index.html">
+            <img src="assets/logo-uten-tekst.png" alt="STS Logo">
+            <h2>Sivertsen Tredesign Studio</h2>
+          </a>
+        </div>
+        <nav>
+          <a href="index.html">Hjem</a>
+          <a href="gallery">Galleri</a>
+          <a href="contact">Kontakt</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="main-content">
+        <div class="new">
+          <h2 class="new-headline">
+            Nyhet
+          </h2>
+          <img class="new-picture"
+            src="https://s3-alpha-sig.figma.com/img/e69d/d0f6/ed9d79789ee76a513b3653a0e2e0e6fb?Expires=1711324800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jqPq3Acs7Bo7wqHHGTaBP1NjjiEbK8QkYXxFBJCFnGz8MFxuF1Y9J-BgBmhKFnpzD31payjUwjyLtXOsyLUVgjL~VhfMbIKAONE8rYk8byjuXLY4uPt9kpUrEsyqOa3oKYLdh8nIT8mnTKfkAHn9bYzy9WKRHjPoxa3qnogZM7A2I3ghpLmDc4uNFVf1IGPYmp-~D0hrZacMqjnK8yiB8takjYOdmFZDkPleCLc6hkKquul7PEtX~QYBpVZkhBaQgJdXFs3ckfnlmKn8TZX8xSSP9Uh07lneYvGSvHkszp69V7j4BKQwkeoyBsdVccfvJYmyloNMp4uhxFx2Y0EfDQ__"
+            alt="">
+        </div>
+        <a href="gallery.html">
+          <h2 class="gallery-headline">
+            Galleri
+          </h2>
+        </a>
+        <div class="gallery">
+          <div class="slideshow">
+
+            <div class="gallery-image fade">
+              <div class="project-container">
+                <img
+                  src="https://images.thdstatic.com/productImages/7fa93ede-6f25-4126-a0db-bd828f3227b0/svn/outdoor-chaise-lounges-djmx250-64_600.jpg">
+                <div class="text">bord</div>
+              </div>
+              <div class="project-container">
+                <img src="https://cdn.frankerfacez.com/emoticon/303899/1">
+                <div class="text">pikk</div>
+              </div>
+              <div class="project-container">
+                <img src="https://cdn.frankerfacez.com/emoticon/262458/1">
+                <div class="text">bord</div>
+              </div>
+            </div>
+            <div class="gallery-image fade">
+              <div class="project-container">
+                <img src="https://i.redd.it/9ip3hzbdqsi91.png">
+                <div class="text">pikk</div>
+              </div>
+              <div class="project-container">
+                <img src="https://cdn.frankerfacez.com/emoticon/318914/1">
+                <div class="text">bord</div>
+              </div>
+              <div class="project-container">
+                <img src="https://cdn.frankerfacez.com/emoticon/307828/1">
+                <div class="text">Stol</div>
+              </div>
+            </div>
+            <div class="gallery-image fade">
+              <div class="project-container">
+                <img src="https://cdn.frankerfacez.com/emoticon/250614/1">
+                <div class="text">Stol</div>
+              </div>
+              <div class="project-container">
+                <img src="https://cdn.frankerfacez.com/emoticon/448771/1">
+                <div class="text">Stol</div>
+              </div>
+              <div class="project-container">
+                <img src="https://cdn.frankerfacez.com/emoticon/250610/1">
+                <div class="text">Stol</div>
+              </div>
+            </div>
+            <div class="buttons">
+              <!-- Next and previous buttons -->
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+
+          </div>
+
+          <!-- The dots/circles -->
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <div class="footer-logo">
+          <img src="assets/logo-uten-tekst.png" alt="STS Footer Logo">
+        </div>
+        <ul class="contact-list-icons">
+          <li>
+            <a href="https://www.linkedin.com/in/silje-skogstrand-moe-1bba7b269/" target="_blank">
+              Galleri
+            </a>
+          </li>
+          <li>
+            <a href="https://www.behance.net/siljeskogstr/" target="_blank">
+              Kontakt
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
+
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("gallery-image");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "inline-flex";
+    slides[slideIndex - 1].style.justifyContent = "space-between";
+    slides[slideIndex - 1].style.width = "100%";
+    dots[slideIndex - 1].className += " active";
+  }
+</script>
+
+<script type="text/javascript">
+  $(window).load(function () {
+    $(".carousel .item").each(function () {
+      var i = $(this).next();
+      i.length || (i = $(this).siblings(":first")),
+        i.children(":first-child").clone().appendTo($(this));
+
+      for (var n = 0; n < 4; n++)(i = i.next()).length ||
+        (i = $(this).siblings(":first")),
+        i.children(":first-child").clone().appendTo($(this))
+    })
+  });
+</script>
