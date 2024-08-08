@@ -1,18 +1,24 @@
 const productsQuery = products.slice(Math.max(products.length - 3, 0))
 console.log(productsQuery);
 
-function otherProjects(product1, product2, product3) {
+function otherProjects(products) {
   const container = document.getElementById('other-projects');
+
+  let productImagesHtml = '';
+
+  products.forEach(product => {
+    productImagesHtml += `
+      <a href="product.html?product=${product.id}"><img src="${product.imageUrl}"></a>
+    `;
+  });
 
   const htmlContent = `
     <div class="other-projects">
       <h3>
         Andre Prosjekter
-        </h3>
+      </h3>
       <div class="other-project-images">
-        <img src="${product1.imageUrl}">
-        <img src="${product2.imageUrl}">
-        <img src="${product3.imageUrl}">
+        ${productImagesHtml}
       </div>
     </div>
   `;
@@ -20,4 +26,4 @@ function otherProjects(product1, product2, product3) {
   container.innerHTML = htmlContent;
 }
 
-otherProjects(productsQuery["0"], productsQuery["1"], productsQuery["2"]);
+otherProjects(productsQuery);
