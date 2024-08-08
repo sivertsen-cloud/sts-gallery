@@ -348,6 +348,9 @@ main h2 {
 #product-container {
   text-align: center;
   padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 #product-container img {
