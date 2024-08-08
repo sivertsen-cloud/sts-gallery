@@ -353,6 +353,12 @@ main h2 {
   justify-content: space-around;
 }
 
+#other-projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 #product-container img {
   max-width: 100%;
   height: auto;
