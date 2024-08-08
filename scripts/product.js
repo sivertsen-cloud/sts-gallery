@@ -41,7 +41,7 @@ function displayProduct(productID, productSlideImages, productImages, dotsHtml) 
   const container = document.getElementById('product-container');
 
   const htmlContent = `
-    <h2>${productID.name}</h1>
+    <h2>${productID.name}</h2>
     <div class="product-gallery">
     <div class="product-slideshow">
 
