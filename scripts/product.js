@@ -20,6 +20,12 @@ const products = [
     images: ["https://cdn.frankerfacez.com/emoticon/307828/1", "https://cdn.frankerfacez.com/emoticon/318914/1"]
   }
 ];
+
+// $.get("data/products.txt", function(data) {
+//   const products = data;
+// });
+// outputs the content of the text file
+
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const productID = urlParams.get('product')
@@ -81,10 +87,12 @@ function displayProduct(productID, productSlideImages, productImages, dotsHtml) 
     <div class="other-projects">
       <h3>
         Andre Prosjekter
+        </h3>
+      <div class="other-project-images">
         <img src="https://i.pinimg.com/736x/a6/c3/e6/a6c3e6efb39bc6dfa58b14e5cf8b1db4.jpg">
         <img src="https://i.pinimg.com/736x/a6/c3/e6/a6c3e6efb39bc6dfa58b14e5cf8b1db4.jpg">
         <img src="https://i.pinimg.com/736x/a6/c3/e6/a6c3e6efb39bc6dfa58b14e5cf8b1db4.jpg">
-      </h3>
+      </div>
     </div>
   `;
 
