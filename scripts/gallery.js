@@ -3,8 +3,9 @@
 
 function displayProduct(products) {
   const container = document.getElementById('gallery-content');
-  let items = ``
-  products.forEach(function (product, index) {
+  let items = ``;
+  galleryProducts = products.reverse();
+  galleryProducts.forEach(function (product, index) {
     if ((index % 3) == 0) items += '<div class="gallery-row">';
 
     items += `
