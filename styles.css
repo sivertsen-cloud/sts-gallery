@@ -303,7 +303,7 @@ main h2 {
 
 .gallery-row {
   display: inline-flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
   height: 200px;
   padding: 0 0 32px 0;
