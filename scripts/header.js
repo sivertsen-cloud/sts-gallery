@@ -4,7 +4,7 @@ document.write('\
         <div class="logo"> \
           <a class="logo-link" href="index.html"> \
             <img src="assets/logo-uten-tekst.png" alt="STS Logo"> \
-            <h2>Sivertsen Tredesign Studio</h2> \
+            <h2>Sivertsen 3Design</h2> \
           </a> \
         </div> \
         <nav> \
