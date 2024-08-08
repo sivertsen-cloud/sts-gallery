@@ -1,6 +1,6 @@
 function slideshow(products) {
   const container = document.getElementById('slideshow');
-  let items = ``
+  let items = ``;
   slideshowProducts = products.slice(Math.max(products.length - 9, 0)).reverse();
   slideshowProducts.forEach(function (product, index) {
     if ((index % 3) == 0) items += '<div class="gallery-image fade">';
