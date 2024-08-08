@@ -4,10 +4,10 @@ const productID = urlParams.get('product')
 const productQuery = (products.find(x => x.id === productID))
 const imageQuery = (products.find(x => x.id === productID).images)
 
-console.log(queryString);
-console.log(`productID=${productID}`)
-console.log(productQuery)
-console.log(imageQuery)
+// console.log(queryString);
+// console.log(`productID=${productID}`)
+// console.log(productQuery)
+// console.log(imageQuery)
 
 function displayProduct(productID, productSlideImages, productImages, dotsHtml) {
   const container = document.getElementById('product-container');
