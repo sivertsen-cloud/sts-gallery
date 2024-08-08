@@ -1,6 +1,31 @@
-const otherProducts = products.splice(productID,1);
-const productsQuery = products.slice(Math.max(products.length - 3, 0))
-console.log(productsQuery);
+//Remove current product from array
+products.splice(productID-1, 1);
+
+function getRandomProducts(min, max, count) {
+  // Ensure count does not exceed the range of unique numbers
+  if (count > (max - min + 1)) {
+    throw new Error("Count exceeds the range of unique numbers.");
+  }
+
+  let uniqueNumbers = new Set();
+
+  while (uniqueNumbers.size < count) {
+    let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+    uniqueNumbers.add(randomNum);
+  }
+
+  return Array.from(uniqueNumbers);
+}
+
+// Get 3 unique random products
+let randomProducts = getRandomProducts(0, products.length-1, 3);
+console.log(randomProducts);
+
+function pickProductsFromArray(array, indices) {
+  return indices.map(index => array[index]);
+}
+
+// const otherProductsQuery = products.slice(Math.max(products.length - 3, 0));
 
 function otherProjects(products) {
   const container = document.getElementById('other-projects');
@@ -27,4 +52,4 @@ function otherProjects(products) {
   container.innerHTML = htmlContent;
 }
 
-otherProjects(productsQuery);
+otherProjects(pickProductsFromArray(products, randomProducts));
