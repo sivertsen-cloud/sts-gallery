@@ -1,3 +1,4 @@
+const otherProducts = products.splice(productID,1);
 const productsQuery = products.slice(Math.max(products.length - 3, 0))
 console.log(productsQuery);
 
