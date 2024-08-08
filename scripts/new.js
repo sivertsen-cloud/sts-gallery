@@ -1,5 +1,5 @@
 const newProductQuery = products.slice(-1)[0];
-console.log(newProductQuery);
+// console.log(newProductQuery);
 function newProduct(product) {
   const container = document.getElementById('new');
 
