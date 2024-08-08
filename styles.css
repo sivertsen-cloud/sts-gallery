@@ -233,7 +233,7 @@ main h2 {
   display: inline-flex;
   position: absolute;
   top: 50%;
-  width: 900px;
+  width: 100%;
   left: 0;
 }
 
