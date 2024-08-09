@@ -1,6 +1,5 @@
 import renderDuplexComponent from './renderDuplexComponent';
 const contentful = require('contentful');
-console.log('fuckghpages');
 const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE_ID,      // Space ID from environment variables
   accessToken: process.env.CONTENTFUL_API_KEY  // API Key from environment variables
