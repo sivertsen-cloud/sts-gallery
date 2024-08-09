@@ -1,9 +1,11 @@
-document.write('\
+import logo from '../assets/images/logo-uten-tekst.png';
+
+document.write(`\
     <header> \
       <div class="navigation-bar"> \
         <div class="logo"> \
           <a class="logo-link" href="index.html"> \
-            <img src="assets/logo-uten-tekst.png" alt="STS Logo"> \
+            <img src="${logo}" alt="STS Logo"> \
             <h2>Sivertsen 3Design</h2> \
           </a> \
         </div> \
@@ -14,4 +16,4 @@ document.write('\
         </nav> \
       </div> \
     </header> \
-');
+`);

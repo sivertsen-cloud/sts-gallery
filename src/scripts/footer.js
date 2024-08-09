@@ -1,8 +1,10 @@
-document.write('\
+import logo from '../assets/images/logo-hvit.png';
+
+document.write(`\
   <footer> \
   <div class="footer"> \
     <div class="footer-logo"> \
-      <img src="assets/logo-hvit.png" alt="STS Footer Logo"> \
+      <img src="${logo}" alt="STS Footer Logo"> \
     </div> \
     <ul class="contact-list-icons"> \
       <li> \
@@ -18,4 +20,4 @@ document.write('\
     </ul> \
   </div> \
   </footer> \
-');
+`);

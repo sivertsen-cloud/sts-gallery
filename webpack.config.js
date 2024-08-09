@@ -1,9 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { default: renderDuplexComponent } = require('./src/scripts/renderDuplexComponent');
 
 module.exports = {
   entry: {
-    main: './src/index.js',  // Main entry point
+    main: './src/scripts/index.js',  // Main entry point
     products: './src/data/products.js',
     header: './src/scripts/header.js',  // Additional script
     footer: './src/scripts/footer.js',  // Add more scripts as needed
@@ -14,16 +15,33 @@ module.exports = {
     slideshow: './src/scripts/slideshow.js',
     gallery: './src/scripts/gallery.js',
     otherProjects: './src/scripts/otherProjects.js',
+    about: './src/scripts/about.js',
+    renderDuplexComponent: './src/scripts/renderDuplexComponent.js',
   },
   output: {
     filename: '[name].bundle.js',  // Generates separate bundles for each entry
     path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'assets/[hash][ext][query]',  // Custom output directory for assets
   },
   module: {
     rules: [
       {
         test: /\.css$/,  // Match all .css files
         use: ['style-loader', 'css-loader'],  // Process and inject CSS
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,  // Process image files
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[hash][ext][query]',  // Custom directory for images
+        },
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,  // Process font files
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[hash][ext][query]',  // Custom directory for fonts
+        },
       },
     ],
   },
