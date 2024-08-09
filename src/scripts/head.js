@@ -7,7 +7,7 @@ document.write('\
     <link href="https://fonts.googleapis.com/css?family=EB Garamond" rel="stylesheet"> \
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> \
     <script type="text/javascript" src="products.bundle.js"></script> \
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> \
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> \
     <script src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js"></script> \
   </head> \
 ');

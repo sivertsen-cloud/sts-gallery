@@ -1,3 +1,6 @@
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const productID = urlParams.get('product')
 //Remove current product from array
 products.splice(productID-1, 1);
 

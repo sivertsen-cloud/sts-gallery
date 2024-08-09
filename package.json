@@ -10,7 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "contentful": "^10.13.2"
+    "contentful": "^10.13.2",
+    "jquery": "^3.7.1"
   },
   "devDependencies": {
     "css-loader": "^7.1.2",
