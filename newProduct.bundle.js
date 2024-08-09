@@ -1,0 +1,1 @@
+!function(n){const e=document.getElementById("new"),t=`\n    <h2 class="new-headline">\n      Nyhet\n    </h2>\n    <a href="product.html?product=${n.id}">\n      <img class="new-picture"\n      src="${n.imageUrl}"\n      alt="">\n    </a>\n  `;e.innerHTML=t}(products.slice(-1)[0]);

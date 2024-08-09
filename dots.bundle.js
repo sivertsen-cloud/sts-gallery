@@ -1,0 +1,1 @@
+!function(n){const s=document.getElementById("slideshowButtons");let t=1,e="";slideshowProducts=n.slice(Math.max(n.length-9,0)).reverse(),slideshowProducts.forEach((function(n,s){s%3==0&&(t>3&&(t=1),e+=`\n        <span class="dot" onclick="currentSlide(${t})"></span>\n      `,t++)}));const o=`\n    ${e}\n  `;s.innerHTML=o}(products);
