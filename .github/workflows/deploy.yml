@@ -20,7 +20,7 @@ jobs:
 
     - name: Install dependencies
       env:
-        CONTENTFUL_API_KEY: ${{ secrets.CONTENTFUL_API_KEY }}
+        CONTENTFUL_API_KEY: ${{ secrets.CONTENTFUL_CDA_ACCESS_TOKEN }}
         CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
       run: npm install
 
