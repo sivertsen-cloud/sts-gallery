@@ -20,12 +20,12 @@ jobs:
         node-version: '16'
 
     - name: Install dependencies
-      env:
-        CONTENTFUL_API_KEY: ${{ secrets.CONTENTFUL_CDA_ACCESS_TOKEN }}
-        CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
       run: npm install
 
     - name: Build project
+      env:
+        CONTENTFUL_API_KEY: ${{ secrets.CONTENTFUL_CDA_ACCESS_TOKEN }}
+        CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
       run: npx webpack --config webpack.config.js
 
     - name: Deploy to GitHub Pages
