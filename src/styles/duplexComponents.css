@@ -4,12 +4,9 @@
   flex-direction: column;
 }
 
-
 .duplex-component {
   margin: 20px 0;
   padding: 20px;
-  border: 1px solid #ddd;
-  background-color: #f9f9f9;
 }
 
 .duplex-headline {

@@ -26,6 +26,16 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js$/,  // Handle JavaScript files
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+      {
         test: /\.css$/,  // Match all .css files
         use: ['style-loader', 'css-loader'],  // Process and inject CSS
       },

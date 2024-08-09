@@ -1,4 +1,3 @@
-import '../styles/about.css';
 import renderDuplexComponent from './renderDuplexComponent';
 const contentful = require('contentful');
 

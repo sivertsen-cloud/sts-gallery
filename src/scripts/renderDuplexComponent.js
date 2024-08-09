@@ -1,4 +1,5 @@
 module.exports = function renderDuplexComponent(componentData) {
+  require('../styles/duplexComponents.css');
   const container = document.createElement('div');
   container.classList.add('duplex-component');
 
