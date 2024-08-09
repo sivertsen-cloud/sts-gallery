@@ -80,7 +80,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/about.html',
       filename: 'about.html',
-      chunks: ['main'],  // Inject the main bundle into index.html
+      chunks: ['about'],  // Inject the main bundle into index.html
     }),
     new Dotenv(),
   ],
