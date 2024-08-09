@@ -6,6 +6,7 @@ module.exports = {
     main: './src/index.js',  // Main entry point
     header: './src/scripts/header.js',  // Additional script
     footer: './src/scripts/footer.js',  // Add more scripts as needed
+    head: './src/scripts/head.js',
   },
   output: {
     filename: '[name].bundle.js',  // Generates separate bundles for each entry
