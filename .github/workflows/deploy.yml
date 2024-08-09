@@ -24,6 +24,8 @@ jobs:
 
     - name: Build project
       env:
+        NODE_ENV: production
+        CI: true
         CONTENTFUL_API_KEY: ${{ secrets.CONTENTFUL_CDA_ACCESS_TOKEN }}
         CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
       run: npx webpack --config webpack.config.js
