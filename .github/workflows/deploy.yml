@@ -3,34 +3,25 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main  # Adjust if you're using a different default branch
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build the project
+    - name: Replace environment variables in files
       run: |
-        # Inject environment variables into the build process
-        echo "CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }}" >> .env
-        echo "CONTENTFUL_CDA_ACCESS_TOKEN=${{ secrets.CONTENTFUL_CDA_ACCESS_TOKEN }}" >> .env
-        echo "CONTENTFUL_PREVIEW_API_ACCESS_TOKEN=${{ secrets.CONTENTFUL_PREVIEW_API_ACCESS_TOKEN }}" >> .env
-        npm run build
+        # Use sed to replace placeholders with secrets
+        sed -i 's/YOUR_CONTENTFUL_SPACE_ID/${{ secrets.CONTENTFUL_SPACE_ID }}/g' index.html
+        sed -i 's/YOUR_CDA_ACCESS_TOKEN/${{ secrets.CONTENTFUL_CDA_ACCESS_TOKEN }}/g' index.html
+        sed -i 's/YOUR_PREVIEW_API_ACCESS_TOKEN/${{ secrets.CONTENTFUL_PREVIEW_API_ACCESS_TOKEN }}/g' index.html
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist  # Adjust this if your output directory is different
+        publish_dir: ./  # Assuming your HTML files are in the root of the repository
