@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 const { default: renderDuplexComponent } = require('./src/scripts/renderDuplexComponent');
 const Dotenv = require('dotenv-webpack');
 
