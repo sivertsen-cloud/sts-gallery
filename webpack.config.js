@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { default: renderDuplexComponent } = require('./src/scripts/renderDuplexComponent');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: {
@@ -81,6 +82,7 @@ module.exports = {
       filename: 'about.html',
       chunks: ['main'],  // Inject the main bundle into index.html
     }),
+    new Dotenv(),
   ],
   mode: 'production',
 };

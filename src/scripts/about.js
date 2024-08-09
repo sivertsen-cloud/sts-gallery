@@ -2,8 +2,8 @@ import renderDuplexComponent from './renderDuplexComponent';
 const contentful = require('contentful');
 
 const client = contentful.createClient({
-  space: 'hwlyxu8yxi74',
-  accessToken: 'T1d5XadBmyFdOU_i9VRk2nFDociQlVHOzjsy-Jl39lA',
+  space: process.env.CONTENTFUL_SPACE_ID,      // Space ID from environment variables
+  accessToken: process.env.CONTENTFUL_API_KEY  // API Key from environment variables
 });
 
 client.getEntry('33QSSCZA505j9F4Ky4mZJd')  // Replace with the ID of the entry you want to fetch

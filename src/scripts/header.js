@@ -13,6 +13,7 @@ document.write(`\
           <a href="index.html">Hjem</a> \
           <a href="gallery.html">Galleri</a> \
           <a href="contact.html">Kontakt</a> \
+          <a href="about.html">Om Oss</a> \
         </nav> \
       </div> \
     </header> \

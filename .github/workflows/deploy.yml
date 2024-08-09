@@ -19,6 +19,9 @@ jobs:
         node-version: '16'
 
     - name: Install dependencies
+      env:
+        CONTENTFUL_API_KEY: ${{ secrets.CONTENTFUL_API_KEY }}
+        CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
       run: npm install
 
     - name: Build project
