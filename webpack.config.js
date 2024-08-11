@@ -29,9 +29,9 @@ const plugins = [
     chunks: ['product'],
   }),
   new HtmlWebpackPlugin({
-    template: './src/newproductpage.html',
-    filename: 'newproductpage.html',
-    chunks: ['newproductpage'],
+    template: './src/project.html',
+    filename: 'project.html',
+    chunks: ['project'],
   }),
   new HtmlWebpackPlugin({
     template: './src/about.html',
@@ -70,7 +70,7 @@ module.exports = {
     renderDuplexComponent: './src/scripts/renderDuplexComponent.js',
     renderProductComponent: './src/scripts/renderProductComponent.js',
     productPage: './src/scripts/productPage.js',
-    newproductPage: './src/scripts/newproductPage.js',
+    project: './src/scripts/project.js',
   },
   output: {
     filename: '[name].bundle.js',  // Generates separate bundles for each entry

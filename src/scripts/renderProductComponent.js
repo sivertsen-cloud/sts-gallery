@@ -39,7 +39,7 @@ function renderProductComponent(product) {
 
   const imagePreview = document.createElement('div');
   imagePreview.classList.add('product-image-preview');
-  
+
   const buttonDiv = document.createElement('div');
   buttonDiv.classList.add('buttons');
   const imageLeftButton = document.createElement('a');
@@ -50,10 +50,10 @@ function renderProductComponent(product) {
   imageRightButton.classList.add('next');
   imageRightButton.setAttribute('onclick', "plusSlides(1)");
   imageRightButton.textContent = "\u276F";
-  
+
   buttonDiv.appendChild(imageLeftButton);
   buttonDiv.appendChild(imageRightButton);
-  
+
 
   // Add the images
   if (product.fields.allPictures) {
