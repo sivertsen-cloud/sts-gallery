@@ -13,11 +13,11 @@ const plugins = [
     filename: 'index.html',
     chunks: ['main'],
   }),
-  new HtmlWebpackPlugin({
-    template: './src/gallery.html',
-    filename: 'gallery.html',
-    chunks: ['gallery'],
-  }),
+  // new HtmlWebpackPlugin({
+  //   template: './src/gallery.html',
+  //   filename: 'gallery.html',
+  //   chunks: ['gallery'],
+  // }),
   new HtmlWebpackPlugin({
     template: './src/contact.html',
     filename: 'contact.html',
@@ -40,8 +40,8 @@ const plugins = [
   }),
   new HtmlWebpackPlugin({
     template: './src/newGallery.html',
-    filename: 'newGallery.html',
-    chunks: ['newGallery'],
+    filename: 'gallery.html',
+    chunks: ['gallery'],
   }),
 ];
 
@@ -69,7 +69,7 @@ module.exports = {
     newProduct: './src/scripts/newProduct.js',
     dots: './src/scripts/dots.js',
     slideshow: './src/scripts/slideshow.js',
-    gallery: './src/scripts/gallery.js',
+    // gallery: './src/scripts/gallery.js',
     otherProjects: './src/scripts/otherProjects.js',
     about: './src/scripts/about.js',
     renderDuplexComponent: './src/scripts/renderDuplexComponent.js',
@@ -77,7 +77,7 @@ module.exports = {
     productPage: './src/scripts/productPage.js',
     project: './src/scripts/project.js',
     renderGallery: './src/scripts/renderGallery.js',
-    newGallery: './src/scripts/newGallery.js',
+    gallery: './src/scripts/newGallery.js',
   },
   output: {
     filename: '[name].bundle.js',  // Generates separate bundles for each entry
