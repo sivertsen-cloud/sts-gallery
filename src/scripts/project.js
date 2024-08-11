@@ -9,11 +9,12 @@ const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE_ID,      // Space ID from environment variables
   accessToken: process.env.CONTENTFUL_API_KEY  // API Key from environment variables
 });
-
-client.getEntries({
-  content_type: 'product',      // Replace 'product' with your content type ID
-  'fields.productId': productID         // Replace 'productId' with the field ID you're querying
-}).then((entry) => {
+if (productID) {
+  console.log('Product ID is set:', productID);
+  client.getEntries({
+    content_type: 'product',      // Replace 'product' with your content type ID
+    'fields.productId': productID         // Replace 'productId' with the field ID you're querying
+  }).then((entry) => {
     console.log(entry);
 
     const pageTitle = document.querySelector('#product-title');
@@ -32,4 +33,9 @@ client.getEntries({
 
 
   })
-  .catch(err => console.error(err));
+    .catch(err => console.error(err));
+}
+else {
+  console.log('Product ID is not set.');
+  window.location.href("/");
+}

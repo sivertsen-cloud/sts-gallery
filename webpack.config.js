@@ -38,6 +38,11 @@ const plugins = [
     filename: 'about.html',
     chunks: ['about'],
   }),
+  new HtmlWebpackPlugin({
+    template: './src/newGallery.html',
+    filename: 'newGallery.html',
+    chunks: ['newGallery'],
+  }),
 ];
 
 // Include dotenv-webpack for local development
@@ -71,6 +76,8 @@ module.exports = {
     renderProductComponent: './src/scripts/renderProductComponent.js',
     productPage: './src/scripts/productPage.js',
     project: './src/scripts/project.js',
+    renderGallery: './src/scripts/renderGallery.js',
+    newGallery: './src/scripts/newGallery.js',
   },
   output: {
     filename: '[name].bundle.js',  // Generates separate bundles for each entry
