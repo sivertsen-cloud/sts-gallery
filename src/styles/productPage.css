@@ -1,0 +1,15 @@
+#product-container .product-image-preview img {
+  width: 90px;
+  height: 70px;
+  margin: 10px;
+}
+
+#product-container {
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: space-around;
+}

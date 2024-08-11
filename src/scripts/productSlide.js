@@ -1,15 +1,8 @@
 let slideIndex = 1;
-showSlides(slideIndex);
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+document.addEventListener('DOMContentLoaded', function () {
+  showSlides(slideIndex);
+});
 
 function showSlides(n) {
   let i;
@@ -29,14 +22,41 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
 }
 
-$(window).load(function () {
+// jQuery for carousel setup
+document.addEventListener('DOMContentLoaded', function () {
   $(".carousel .item").each(function () {
     var i = $(this).next();
-    i.length || (i = $(this).siblings(":first")),
-      i.children(":first-child").clone().appendTo($(this));
+    if (!i.length) {
+      i = $(this).siblings(":first");
+    }
+    i.children(":first-child").clone().appendTo($(this));
 
-    for (var n = 0; n < 4; n++)(i = i.next()).length ||
-      (i = $(this).siblings(":first")),
-      i.children(":first-child").clone().appendTo($(this))
-  })
+    for (var n = 0; n < 4; n++) {
+      i = i.next();
+      if (!i.length) {
+        i = $(this).siblings(":first");
+      }
+      i.children(":first-child").clone().appendTo($(this));
+    }
+  });
 });
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+window.plusSlides = plusSlides;
+window.currentSlide = currentSlide;
+window.showSlides = showSlides;
+
+module.exports = {
+  showSlides,
+  plusSlides,
+  currentSlide,
+};
