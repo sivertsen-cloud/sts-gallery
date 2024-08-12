@@ -76,7 +76,7 @@ function renderProductComponent(product) {
       imageSlideshow.appendChild(slideshowImg);
 
       //Image dots
-      const imageDot = document.createElement('span')
+      const imageDot = document.createElement('span');
       imageDot.classList.add("dot");
       imageDot.setAttribute("onclick", `currentSlide(${adjustedIndex})`);
       if (index == 0) {

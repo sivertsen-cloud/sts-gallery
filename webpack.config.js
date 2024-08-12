@@ -78,6 +78,7 @@ module.exports = {
     project: './src/scripts/project.js',
     renderGallery: './src/scripts/renderGallery.js',
     gallery: './src/scripts/newGallery.js',
+    renderGallerySlideshow: './src/scripts/renderGallerySlideshow.js',
   },
   output: {
     filename: '[name].bundle.js',  // Generates separate bundles for each entry
