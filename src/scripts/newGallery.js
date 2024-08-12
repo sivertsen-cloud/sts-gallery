@@ -8,13 +8,14 @@ const client = contentful.createClient({
 
 client.getEntries({
   content_type: 'product',      // Replace 'product' with your content type ID
-}).then((entry) => {
-    console.log(entry);
+}).then((entries) => {
+    console.log(entries);
 
     const bodyContainer = document.querySelector('#gallery');
     bodyContainer.innerHTML = '';  // Clear any existing content
 
-    entry.items.forEach(function(product, index) {
+    entries.items.forEach(function(product, index) {
+      // console.log(product);
       const productContent = renderGallery(product, index);
       console.log('Rendered Element:', productContent);  // Debugging output
 
@@ -25,3 +26,5 @@ client.getEntries({
 
   })
   .catch(err => console.error(err));
+  
+//TODO MOVE GALLERY-ROW TO HERE

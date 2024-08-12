@@ -1,3 +1,6 @@
+const container = document.createElement('div');
+container.classList.add('other-project-images');
+
 function renderOtherProjects(product, index) {
 
   function normalizeUrl(url) {
@@ -7,8 +10,7 @@ function renderOtherProjects(product, index) {
     return url;
   }
 
-  const container = document.createElement('div');
-  container.classList.add('other-project-images');
+
 
   // Add the images
   if (product.fields.mainPicture) {

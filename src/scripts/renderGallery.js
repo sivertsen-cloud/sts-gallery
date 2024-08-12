@@ -1,8 +1,10 @@
+const container = document.createElement('div');
+container.classList.add('gallery-content');
+container.setAttribute("id", "gallery-content");
+
 function renderGallery(product, index) {
   require('../styles/productPage.css');
-  const container = document.createElement('div');
-  container.classList.add('gallery-content');
-  container.setAttribute("id", "gallery-content");
+
 
   function normalizeUrl(url) {
     if (!url.startsWith('http')) {
@@ -10,10 +12,18 @@ function renderGallery(product, index) {
     }
     return url;
   }
+  // Track the current row
+  let galleryRow;
 
-  const galleryRow = document.createElement('div');
-  galleryRow.classList.add('gallery-row')
-
+  //Create a gallery row for each third project
+  if (index % 3 === 0) {
+    galleryRow = document.createElement('div');
+    galleryRow.classList.add('gallery-row');
+    container.appendChild(galleryRow);
+  } else {
+    // Use the last appended row
+    galleryRow = container.lastElementChild;
+  }
   const projectContainer = document.createElement('div');
   projectContainer.classList.add('project-container')
 
@@ -21,10 +31,7 @@ function renderGallery(product, index) {
   if (product.fields.mainPicture) {
     const picture = product.fields.mainPicture.fields.file.url
     let adjustedIndex = index + 1
-    //Create a gallery row for each third project
-    if ((index % 3) == 0) {
-      container.appendChild(galleryRow);
-    }
+
     const projectLink = document.createElement('a')
     projectLink.setAttribute('href', `project.html?product=${adjustedIndex}`)
     projectContainer.appendChild(projectLink);
