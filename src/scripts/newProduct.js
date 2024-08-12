@@ -25,7 +25,7 @@ async function newProduct(product) {
       console.log('Newest product:', newestProduct);
 
       project = document.createElement('a');
-      project.setAttribute('href', `project.html?product${newestProduct.fields.productId}`);
+      project.setAttribute('href', `project.html?product=${newestProduct.fields.productId}`);
 
       projectImage = document.createElement('img');
       projectImage.classList.add("new-picture");
