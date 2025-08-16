@@ -6,7 +6,7 @@ document.write(`\
         <div class="logo"> \
           <a class="logo-link" href="index.html"> \
             <img src="${logo}" alt="STS Logo"> \
-            <h2>Sivertsen 3Design</h2> \
+            <!-- <h2>Sivertsen 3Design</h2> \ -->
           </a> \
         </div> \
         <nav> \
