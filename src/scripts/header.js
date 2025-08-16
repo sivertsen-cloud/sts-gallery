@@ -1,4 +1,4 @@
-import logo from '../assets/images/logo-uten-tekst.png';
+import logo from '../assets/images/nylogo.svg';
 
 document.write(`\
     <header> \
