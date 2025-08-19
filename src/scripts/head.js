@@ -11,6 +11,6 @@ document.write('\
  </head> \
 ');
 
-// Keep these imports - Webpack will bundle them properly
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import '../styles/defaults.css';  // Default styling
