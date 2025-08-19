@@ -2,7 +2,7 @@ import logo from '../assets/images/nylogo.svg';
 
 document.write(`\
     <header> \
-      <div class="navigation-bar"> \
+      <div class="navbar"> \
         <div class="logo"> \
           <a class="logo-link" href="index.html"> \
             <img src="${logo}" alt="STS Logo"> \
