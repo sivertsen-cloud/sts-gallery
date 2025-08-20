@@ -3,7 +3,7 @@ import logo from '../assets/images/nylogo.svg';
 document.write(`\
     <header> \
       <div class="navbar"> \
-        <div class="logo"> \
+        <div class="navbar-brand logo"> \
           <a class="logo-link" href="index.html"> \
             <img src="${logo}" alt="STS Logo"> \
             <!-- <h2>Sivertsen 3Design</h2> \ -->
