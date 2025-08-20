@@ -14,3 +14,8 @@ document.write('\
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../styles/defaults.css';  // Default styling
+import $ from 'jquery';
+
+window.$ = window.jQuery = $;
+
+console.log('jQuery loaded:', typeof $ !== 'undefined');

@@ -2,19 +2,23 @@ import logo from '../assets/images/nylogo.svg';
 
 document.write(`\
     <header> \
-      <div class="navbar"> \
-        <div class="navbar-brand logo"> \
-          <a class="logo-link" href="index.html"> \
-            <img src="${logo}" alt="STS Logo"> \
+      <div class="container navbar navbar-expand-lg bg-dark-s3d"> \
+        <div class="row">
+          <a class="col navbar-brand" href="index.html"> \
+            <img src="${logo}" width="80px" height="80px" alt="S3D Logo"> \
             <!-- <h2>Sivertsen 3Design</h2> \ -->
           </a> \
-        </div> \
-        <nav> \
-          <a href="index.html">Hjem</a> \
-          <a href="gallery.html">Galleri</a> \
-          <a href="contact.html">Kontakt</a> \
-          <a href="about.html">Om Oss</a> \
-        </nav> \
+        </div>
+        <div class="w-100"></div>
+        <div class="row">
+        <nav class="nav"> \
+          <a class="nav-link col text-accent active" href="index.html">Hjem</a>
+          <a class="nav-link col text-accent" href="gallery.html">Galleri</a>
+          <a class="nav-link col text-accent" href="contact.html">Kontakt</a>
+          <a class="nav-link col text-accent" href="about.html">Om Oss</a>
+          </li>
+        </nav>
+        </div>
       </div> \
     </header> \
 `);
