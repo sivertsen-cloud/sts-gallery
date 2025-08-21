@@ -8,6 +8,17 @@
   --dark: #7a8471;             /* Deep moss green */
 }
 
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.3);
+  border-radius: 3px;
+}
+
 .carousel-control-next-icon, .carousel-control-prev-icon, .carousel-indicators [data-bs-target] {
   background-color: var(--primary);
 }
@@ -26,7 +37,12 @@
 }
 
 body {
-    background-color: var(--background);
+  background-color: var(--background);
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .gallery-image {

@@ -1,5 +1,6 @@
 const container = document.createElement('div');
 container.classList.add('other-project-images');
+container.classList.add('row');
 
 function renderOtherProjects(product, index) {
 
@@ -19,12 +20,14 @@ function renderOtherProjects(product, index) {
 
     const projectLink = document.createElement('a')
     projectLink.setAttribute('href', `project.html?product=${adjustedIndex}`)
+    projectLink.classList.add('col')
     container.appendChild(projectLink);
     //Add images to gallery
     const img = document.createElement('img');
     img.src = normalizeUrl(picture);
     img.alt = picture || '';  // Use title or empty string as alt text
     img.classList.add('product-image');
+    img.setAttribute('style', 'width: 224px;')
     projectLink.appendChild(img);
   }
 

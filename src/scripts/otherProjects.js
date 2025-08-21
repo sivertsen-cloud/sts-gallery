@@ -27,7 +27,7 @@ function getRandomProducts(productID) {
     const selectedProducts = products.slice(0, 3);
 
     const bodyContainer = document.querySelector('#other-projects');
-    bodyContainer.classList.add('other-projects');
+    bodyContainer.classList.add('other-projects','container');
     const title = document.createElement("h3");
     title.textContent = "Andre Prosjekter";
     bodyContainer.innerHTML = '';  // Clear any existing content

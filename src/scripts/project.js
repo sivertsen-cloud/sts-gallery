@@ -1,4 +1,4 @@
-import renderProductComponent from './renderProductComponent';
+import renderProductComponent from './render/renderProductComponent';
 
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -17,18 +17,22 @@ if (productID) {
   }).then((entry) => {
     console.log(entry);
 
-    const pageTitle = document.querySelector('#product-title');
-    pageTitle.textContent = entry.items[0].fields.name;
+    const productContainer = document.querySelector('#product-container');
+    productContainer.innerHTML = '';  // Clear any existing content
+    const productTitle = document.createElement('h2')
+    productTitle.textContent = entry.items[0].fields.name;
 
-    const bodyContainer = document.querySelector('#product-body');
-    bodyContainer.innerHTML = '';  // Clear any existing content
+    productContainer.appendChild(productTitle)
+
+    // const bodyContainer = document.querySelector('#product-body');
+    // bodyContainer.innerHTML = '';  // Clear any existing content
 
     entry.items.forEach(product => {
       const productContent = renderProductComponent(product);
       console.log('Rendered Element:', productContent);  // Debugging output
 
       // Append the duplex component to the body container
-      bodyContainer.appendChild(productContent);
+      productContainer.appendChild(productContent);
     });
 
 

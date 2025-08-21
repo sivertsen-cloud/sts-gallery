@@ -3,7 +3,7 @@ container.classList.add('container','gallery-content');
 container.setAttribute("id", "gallery-content");
 
 function renderGallery(product, index) {
-  require('../../styles/productPage.css');
+  // require('../../styles/productPage.css');
 
 
   function normalizeUrl(url) {

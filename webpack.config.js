@@ -23,11 +23,11 @@ const plugins = [
     filename: 'contact.html',
     chunks: ['contact'],
   }),
-  new HtmlWebpackPlugin({
-    template: './src/product.html',
-    filename: 'product.html',
-    chunks: ['product'],
-  }),
+  // new HtmlWebpackPlugin({
+  //   template: './src/product.html',
+  //   filename: 'product.html',
+  //   chunks: ['product'],
+  // }),
   new HtmlWebpackPlugin({
     template: './src/project.html',
     filename: 'project.html',
@@ -65,7 +65,7 @@ module.exports = {
     header: './src/scripts/header.js',  // Additional script
     footer: './src/scripts/footer.js',  // Add more scripts as needed
     head: './src/scripts/head.js',
-    productSlide: './src/scripts/productSlide.js',
+    // productSlide: './src/scripts/productSlide.js',
     newProduct: './src/scripts/newProduct.js',
     // dots: './src/scripts/dots.js',
     slideshow: './src/scripts/slideshow.js',
@@ -73,10 +73,10 @@ module.exports = {
     otherProjects: './src/scripts/otherProjects.js',
     about: './src/scripts/about.js',
     renderDuplexComponent: './src/scripts/renderDuplexComponent.js',
-    renderProductComponent: './src/scripts/renderProductComponent.js',
-    productPage: './src/scripts/productPage.js',
+    renderProductComponent: './src/scripts/render/renderProductComponent.js',
+    // productPage: './src/scripts/productPage.js',
     project: './src/scripts/project.js',
-    renderGallery: './src/scripts/renderGallery.js',
+    renderGallery: './src/scripts/render/renderGallery.js',
     gallery: './src/scripts/newGallery.js',
     renderGallerySlideshow: './src/scripts/renderGallerySlideshow.js',
   },

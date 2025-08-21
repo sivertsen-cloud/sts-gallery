@@ -3,26 +3,24 @@
 <script src="head.bundle.js"></script>
 
 <body>
-  <div class="container">
+  <div class="d-flex flex-column vh-100"> 
     <script src="header.bundle.js"></script>
 
-    <main>
-      <div class="main-content">
-        <div id="product-container">
+    <main class="flex-grow-1 overflow-auto">
+        <div id="product-container" class="container">
           <h2 id="product-title">Loading...</h2>
           <div id="product-body">Loading product...</div>
         </div>
         <script src="project.bundle.js"></script>
-        <script src="productSlide.bundle.js"></script>
+        <!-- <script src="productSlide.bundle.js"></script> -->
         <div id="other-projects">
           <h3>Andre Prosjekter</h3>
           <script src="otherProjects.bundle.js"></script>
         </div>
-      </div>
     </main>
 
     <script src="footer.bundle.js"></script>
-  </div>
+    </div>
 </body>
 
 </html>
