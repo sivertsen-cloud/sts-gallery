@@ -18,7 +18,7 @@ function showSlides(n) {
   }
   slides[slideIndex - 1].style.display = "inline-flex";
   slides[slideIndex - 1].style.justifyContent = "center";
-  slides[slideIndex - 1].style.width = "100%";
+  // slides[slideIndex - 1].style.width = "200px";
   dots[slideIndex - 1].className += " active";
 }
 

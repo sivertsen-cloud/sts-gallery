@@ -7,20 +7,20 @@
     <script src="header.bundle.js"></script>
 
     <main class="container">
-      <div class="container main-content">
-        <div class="new" id="new">
+        <div class="row new" id="new">
+          <script src="newProduct.bundle.js"></script>
         </div>
-        <script src="newProduct.bundle.js"></script>
-        <a href="gallery.html" class="text-decoration-none">
-          <h2 class="text-primary-s3d link">
-            Galleri
-          </h2>
-        </a>
-        <div class="container gallerySlideshow" id="gallerySlideshow">
-          <div class="slideshow" id="slideshow">
-            <script src="slideshow.bundle.js"></script>
+        <div class="row">
+          <a href="gallery.html" class="text-decoration-none">
+            <h2 class="text-primary-s3d link">
+              Galleri
+            </h2>
+          </a>
+          <div class="gallerySlideshow carousel slide container " id="gallerySlideshow">
+            <div class="slideshow" id="slideshow">
+              <script src="slideshow.bundle.js"></script>
+          </div>
         </div>
-      </div>
     </main>
 
     <script src="footer.bundle.js"></script>
@@ -29,7 +29,7 @@
 
 </html>
 
-<script>
+<!-- <script>
   let slideIndex = 1;
 
   // Wait for DOM to be ready before calling showSlides
@@ -78,7 +78,7 @@
     // Check if the slide exists before accessing it
     if (slides[slideIndex - 1]) {
       slides[slideIndex - 1].style.display = "inline-flex";
-      slides[slideIndex - 1].style.justifyContent = "space-evenly";
+      // slides[slideIndex - 1].style.justifyContent = "space-evenly";
       slides[slideIndex - 1].style.width = "100%";
     }
     
@@ -100,4 +100,4 @@
         i.children(":first-child").clone().appendTo($(this))
     })
   });
-</script>
+</script> -->

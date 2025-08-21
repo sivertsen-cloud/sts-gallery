@@ -1,5 +1,5 @@
 function dots(products) {
-  const buttons = document.getElementById('slideshowButtons');
+  const buttons = document.getElementById('slideshowIndicator');
   let counter = 1;
   let buttonsHtml = "";
   slideshowProducts = products.slice(Math.max(products.length - 9, 0)).reverse();
@@ -10,7 +10,9 @@ function dots(products) {
         counter = 1;
       }
       buttonsHtml += `
-        <span class="dot" onclick="currentSlide(${counter})"></span>
+        <!-- <span class="dot" onclick="currentSlide(${counter})"></span> -->
+        <!-- <li data-target="#gallerySlideshow" data-slide-to="${counter}"></li> -->
+
       `;
       counter++; // Increment the counter
     }

@@ -67,7 +67,7 @@ module.exports = {
     head: './src/scripts/head.js',
     productSlide: './src/scripts/productSlide.js',
     newProduct: './src/scripts/newProduct.js',
-    dots: './src/scripts/dots.js',
+    // dots: './src/scripts/dots.js',
     slideshow: './src/scripts/slideshow.js',
     // gallery: './src/scripts/gallery.js',
     otherProjects: './src/scripts/otherProjects.js',

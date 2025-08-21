@@ -8,8 +8,31 @@
   --dark: #7a8471;             /* Deep moss green */
 }
 
+.carousel-control-next-icon, .carousel-control-prev-icon, .carousel-indicators [data-bs-target] {
+  background-color: var(--primary);
+}
+
 body {
     background-color: var(--background);
+}
+
+.gallery-image {
+  display: none;
+}
+
+.gallery-image img {
+  max-width: 256px;
+  height: 200px;
+}
+
+.fades3d {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
 /* svg {
