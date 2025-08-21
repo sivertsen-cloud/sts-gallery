@@ -1,9 +1,9 @@
 const container = document.createElement('div');
-container.classList.add('gallery-content');
+container.classList.add('container','gallery-content');
 container.setAttribute("id", "gallery-content");
 
 function renderGallery(product, index) {
-  require('../styles/productPage.css');
+  require('../../styles/productPage.css');
 
 
   function normalizeUrl(url) {
@@ -18,14 +18,14 @@ function renderGallery(product, index) {
   //Create a gallery row for each third project
   if (index % 3 === 0) {
     galleryRow = document.createElement('div');
-    galleryRow.classList.add('gallery-row');
+    galleryRow.classList.add('gallery-row','row');
     container.appendChild(galleryRow);
   } else {
     // Use the last appended row
     galleryRow = container.lastElementChild;
   }
   const projectContainer = document.createElement('div');
-  projectContainer.classList.add('project-container')
+  projectContainer.classList.add('project-container','col')
 
   // Add the images
   if (product.fields.mainPicture) {
@@ -39,7 +39,7 @@ function renderGallery(product, index) {
     const img = document.createElement('img');
     img.src = normalizeUrl(picture);
     img.alt = picture || '';  // Use title or empty string as alt text
-    img.classList.add('product-image');
+    img.classList.add('product-image','img-fluid','img-hover');
     projectLink.appendChild(img);
     galleryRow.appendChild(projectContainer);
   }

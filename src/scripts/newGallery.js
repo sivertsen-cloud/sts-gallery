@@ -1,4 +1,4 @@
-import renderGallery from './renderGallery';
+import renderGallery from './render/renderGallery';
 
 const contentful = require('contentful');
 const client = contentful.createClient({

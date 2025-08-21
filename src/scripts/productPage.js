@@ -70,7 +70,7 @@ function getImages(product) {
 
   product.images.forEach(imageUrl => {
     imageSlideHtml += `
-    <div class="product-images fade">
+    <div class="product-images fades3d">
       <div class="project-container">
         <img src="${imageUrl}" alt="${product.name}">
       </div>

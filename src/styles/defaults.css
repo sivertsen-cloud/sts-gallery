@@ -12,6 +12,19 @@
   background-color: var(--primary);
 }
 
+.img-hover {
+  transition: transform 0.3s ease;
+}
+
+.img-hover:hover {
+  transform: scale(1.05);
+}
+
+.gallery-row img {
+  height: 256px;
+  width: 200px;
+}
+
 body {
     background-color: var(--background);
 }
@@ -105,4 +118,14 @@ div {
 .btn-outline-primary-s3d:hover {
   background-color: var(--primary);
   color: var(--background);
+}
+
+.btn-outline-dark-s3d {
+  border-color: var(--accent);
+  color: var(--dark);
+}
+
+.btn-outline-dark-s3d:hover {
+  background-color: var(--accent);
+  color: var(--dark) !important;
 }

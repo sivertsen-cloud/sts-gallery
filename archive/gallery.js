@@ -6,10 +6,10 @@ function displayProduct(products) {
   let items = ``;
   galleryProducts = products.reverse();
   galleryProducts.forEach(function (product, index) {
-    if ((index % 3) == 0) items += '<div class="gallery-row">';
+    if ((index % 3) == 0) items += '<div class="row">';
 
     items += `
-      <div class="project-container">
+      <div class="project-container col">
         <a href="product.html?product=${product.id}">
           <img
             src="${product.imageUrl}">

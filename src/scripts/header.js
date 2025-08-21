@@ -11,10 +11,10 @@ document.write(`
         <div class="w-100"></div>
         <div class="navbar row">
           <nav class="nav">
-            <a class="nav-link col text-accent active" href="index.html">Hjem</a>
-            <a class="nav-link col text-accent" href="gallery.html">Galleri</a>
-            <a class="nav-link col text-accent" href="contact.html">Kontakt</a>
-            <a class="nav-link col text-accent" href="about.html">Om Oss</a>
+            <a class="nav-link col btn btn-outline-dark-s3d text-accent" href="index.html">Hjem</a>
+            <a class="nav-link col btn btn-outline-dark-s3d text-accent" href="gallery.html">Galleri</a>
+            <a class="nav-link col btn btn-outline-dark-s3d text-accent" href="contact.html">Kontakt</a>
+            <a class="nav-link col btn btn-outline-dark-s3d text-accent" href="about.html">Om Oss</a>
             </li>
           </nav>
         </div>
