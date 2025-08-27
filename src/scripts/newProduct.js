@@ -28,6 +28,7 @@ async function newProduct(product) {
       project.setAttribute('href', `project.html?product=${newestProduct.fields.productId}`);
 
       projectImage = document.createElement('img');
+      projectImage.setAttribute('style', 'width: 617px; height: 380px;')
       projectImage.classList.add("new-picture");
       projectImage.setAttribute('src', `https:${newestProduct.fields.mainPicture.fields.file.url}`);
 
