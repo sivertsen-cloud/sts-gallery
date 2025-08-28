@@ -16,10 +16,11 @@ function renderOtherProjects(product, index) {
   // Add the images
   if (product.fields.mainPicture) {
     const picture = product.fields.mainPicture.fields.file.url
+    const productId = product.fields.productId
     let adjustedIndex = index + 1
 
     const projectLink = document.createElement('a')
-    projectLink.setAttribute('href', `project.html?product=${adjustedIndex}`)
+    projectLink.setAttribute('href', `project.html?product=${productId}`)
     projectLink.classList.add('col')
     container.appendChild(projectLink);
     //Add images to gallery
