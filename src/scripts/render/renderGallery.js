@@ -18,7 +18,7 @@ function renderGallery(product, index) {
   //Create a gallery row for each third project
   if (index % 3 === 0) {
     galleryRow = document.createElement('div');
-    galleryRow.classList.add('gallery-row','row');
+    galleryRow.classList.add('gallery-row','row','mt-5');
     container.appendChild(galleryRow);
   } else {
     // Use the last appended row
@@ -30,10 +30,11 @@ function renderGallery(product, index) {
   // Add the images
   if (product.fields.mainPicture) {
     const picture = product.fields.mainPicture.fields.file.url
+    const productID = product.fields.productId
     let adjustedIndex = index + 1
 
     const projectLink = document.createElement('a')
-    projectLink.setAttribute('href', `project.html?product=${adjustedIndex}`)
+    projectLink.setAttribute('href', `project.html?product=${productID}`)
     projectContainer.appendChild(projectLink);
     //Add images to gallery
     const img = document.createElement('img');

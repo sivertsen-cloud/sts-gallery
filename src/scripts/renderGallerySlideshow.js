@@ -32,7 +32,7 @@ function renderGallerySlideshow(product, index) {
   //Create a slideshow row for each third project
   if (index % 3 === 0) {
     galleryImage = document.createElement('div');
-    galleryImage.classList.add('gallery-image','carousel-item');
+    galleryImage.classList.add('gallery-image','carousel-item', 'row');
     galleryImage.classList.add('fades3d');
     container.appendChild(galleryImage);
     if (index == 0) {
@@ -60,7 +60,7 @@ function renderGallerySlideshow(product, index) {
     img.src = normalizeUrl(picture);
     img.alt = picture || '';  // Use title or empty string as alt text
     // img.classList.add('product-image','carousel-item','active');
-    // img.setAttribute('style', 'width="200px" height="200px"', )
+    img.setAttribute('style', 'width:256px; height:200px;')
     projectLink.appendChild(img);
   }
   return container;

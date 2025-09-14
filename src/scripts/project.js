@@ -20,6 +20,7 @@ if (productID) {
     const productContainer = document.querySelector('#product-container');
     productContainer.innerHTML = '';  // Clear any existing content
     const productTitle = document.createElement('h2')
+    productTitle.classList.add('mb-5')
     productTitle.textContent = entry.items[0].fields.name;
 
     productContainer.appendChild(productTitle)

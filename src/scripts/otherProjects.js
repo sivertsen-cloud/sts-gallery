@@ -30,6 +30,7 @@ function getRandomProducts(productID) {
     bodyContainer.classList.add('other-projects','container');
     const title = document.createElement("h3");
     title.textContent = "Andre Prosjekter";
+    title.classList.add('mb-5')
     bodyContainer.innerHTML = '';  // Clear any existing content
     bodyContainer.appendChild(title);
     selectedProducts.forEach(function (product, index) {

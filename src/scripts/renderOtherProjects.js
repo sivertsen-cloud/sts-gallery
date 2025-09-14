@@ -28,7 +28,7 @@ function renderOtherProjects(product, index) {
     img.src = normalizeUrl(picture);
     img.alt = picture || '';  // Use title or empty string as alt text
     img.classList.add('product-image');
-    img.setAttribute('style', 'width: 224px;')
+    img.setAttribute('style', 'width: 224px; height: 190px;')
     projectLink.appendChild(img);
   }
 

@@ -31,6 +31,7 @@ LeftButton.setAttribute('data-bs-slide', 'prev');
 
 const LeftButtonIcon = document.createElement('span');
 LeftButtonIcon.classList.add('carousel-control-prev-icon');
+LeftButtonIcon.classList.add('rounded-circle');
 LeftButton.appendChild(LeftButtonIcon);
 
 const LeftButtonText = document.createElement('span');
@@ -50,6 +51,7 @@ RightButton.setAttribute('data-bs-slide', 'next');
 
 const RightButtonIcon = document.createElement('span');
 RightButtonIcon.classList.add('carousel-control-next-icon');
+RightButtonIcon.classList.add('rounded-circle');
 RightButton.appendChild(RightButtonIcon);
 
 const RightButtonText = document.createElement('span');

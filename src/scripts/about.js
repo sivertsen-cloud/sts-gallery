@@ -10,6 +10,8 @@ client.getEntry('33QSSCZA505j9F4Ky4mZJd')  // Replace with the ID of the entry y
     console.log(entry);
 
     const pageTitle = document.querySelector('#about-title');
+    pageTitle.classList.add('mt-5')
+    pageTitle.classList.add('mb-5')
     pageTitle.textContent = entry.fields.pageName;
 
     const bodyContainer = document.querySelector('#about-body');

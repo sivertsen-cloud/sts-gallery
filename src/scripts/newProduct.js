@@ -7,7 +7,7 @@ const client = contentful.createClient({
 const container = document.querySelector("#new");
 
 const title = document.createElement('h2');
-title.classList.add("new-headline");
+title.classList.add("new-headline", "mb-5");
 title.textContent = "Nyhet";
 container.appendChild(title);
 
