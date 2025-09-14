@@ -41,6 +41,7 @@ function renderGallery(product, index) {
     img.src = normalizeUrl(picture);
     img.alt = picture || '';  // Use title or empty string as alt text
     img.classList.add('product-image','img-fluid','img-hover');
+    img.setAttribute('style', 'width: 256px; height:200px;')
     projectLink.appendChild(img);
     galleryRow.appendChild(projectContainer);
   }
