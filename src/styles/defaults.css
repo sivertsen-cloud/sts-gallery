@@ -1,11 +1,15 @@
 :root {
-  --primary: #8b6f47;          /* Rich walnut brown */
+  --primary: #352620;          /* Rich walnut brown */
+  --primary-var-3: #3C2C26;
+  --primary-var-4: #513A31;
   --secondary: #9caf88;        /* Soft sage green */
   --background: #f7f5f3;       /* Warm cream */
   --text-primary: #3a3d3a;     /* Soft charcoal */
-  --accent: #b08d57;           /* Aged copper */
+  --accent: #E0CFBF;           /* Aged copper */
+  --accent-dark: #8b5f1d;           /* Aged copper */
   --muted: #a8a5a0;            /* Smooth stone gray */
-  --dark: #7a8471;             /* Deep moss green */
+  --dark: #352620;             /* Deep moss green */
+  --dark-highlight: #251914;             /* Deep moss green */
 }
 
 ::-webkit-scrollbar {
@@ -77,6 +81,7 @@ div {
 .bg-primary-s3d { background-color: var(--primary) !important; }
 .text-primary-s3d { color: var(--primary) !important; }
 .border-primary-s3d { border-color: var(--primary) !important; }
+.bg-primary-var-3 { background-color: var(--primary-var-3) !important; }
 
 /* Secondary colors (sage green) */
 .bg-secondary-s3d { background-color: var(--secondary) !important; }
@@ -137,11 +142,23 @@ div {
 }
 
 .btn-outline-dark-s3d {
-  border-color: var(--accent);
+  border-color: var(--dark-highlight);
   color: var(--dark);
 }
 
 .btn-outline-dark-s3d:hover {
+  background-color: var(--dark-highlight);
+  color: var(--accent) !important;
+}
+
+.btn-dark-s3d {
+  background-color: var(--dark);
+  border-color: var(--dark);
+  color: var(--text-primary);
+}
+
+.btn-dark-s3d:hover {
   background-color: var(--accent);
-  color: var(--dark) !important;
+  border-color: var(--accent);
+  color: var(--background);
 }

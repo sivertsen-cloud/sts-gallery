@@ -26,5 +26,3 @@ client.getEntries({
 
   })
   .catch(err => console.error(err));
-  
-//TODO MOVE GALLERY-ROW TO HERE

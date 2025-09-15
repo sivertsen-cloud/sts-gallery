@@ -1,7 +1,8 @@
 module.exports = function renderDuplexComponent(componentData) {
-  require('../styles/duplexComponents.css');
+  // require('../styles/duplexComponents.css');
   const container = document.createElement('div');
   container.classList.add('duplex-component');
+  container.classList.add('container');
 
   function normalizeUrl(url) {
     if (!url.startsWith('http')) {
@@ -16,15 +17,17 @@ module.exports = function renderDuplexComponent(componentData) {
   if (componentData.fields.headline) {
     const headline = document.createElement('h2');
     headline.textContent = componentData.fields.headline;
-    headline.classList.add('duplex-headline');
+    headline.classList.add('row');
     container.appendChild(headline);
   }
 
   const contentContainer = document.createElement('div');
-  contentContainer.classList.add('duplex-content-container');
+  contentContainer.classList.add('row');
 
   const contentTextContainer = document.createElement('div');
-  contentTextContainer.classList.add('duplex-text-container');
+  contentTextContainer.classList.add('text-decoration-none');
+  contentTextContainer.classList.add('col-8');
+  contentTextContainer.classList.add('text-start');
 
   // Add the body text
   if (componentData.fields.bodyText) {
@@ -37,10 +40,16 @@ module.exports = function renderDuplexComponent(componentData) {
       } else if (item.nodeType === 'unordered-list') {
         const ul = document.createElement('ul');
         ul.classList.add('duplex-list');
+        ul.classList.add('list-unstyled');
         item.content.forEach(listItem => {
           const li = document.createElement('li');
-          li.textContent = listItem.content[0].content[0].value;
-          li.classList.add('duplex-list-item');
+          li.classList.add('list-group-item');
+          const i = document.createElement('i');
+          i.classList.add('bi');
+          i.classList.add('bi-arrow-right-short');
+          i.classList.add('me-2');
+          li.appendChild(i);
+          li.appendChild(document.createTextNode(listItem.content[0].content[0].value));
           ul.appendChild(li);
         });
         contentTextContainer.appendChild(ul);
@@ -54,10 +63,13 @@ module.exports = function renderDuplexComponent(componentData) {
     img.src = normalizeUrl(componentData.fields.image.fields.file.url);
     img.alt = componentData.fields.image.fields.title || '';  // Use title or empty string as alt text
     img.classList.add('duplex-image');
+    img.classList.add('col-4');
+    img.setAttribute('style', 'width:300px; height:300px;')
     contentContainer.appendChild(img);
   }
 
   container.appendChild(contentContainer);
+  container.classList.add('mb-5')
 
   return container;
 };
