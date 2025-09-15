@@ -36,3 +36,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist  # The directory where your static files are located
         publish_branch: gh-pages
+        cname: sivertsen3design.no
