@@ -15,17 +15,26 @@ function renderGallery(product, index) {
   // Track the current row
   let galleryRow;
 
+function getColumns() {
+    const width = window.innerWidth;
+    if (width <= 576) return 1;        // Mobile
+    if (width <= 992) return 2;        // Tablet  
+    return 3;                          // Desktop
+}
+
+const columns = getColumns();
+
   //Create a gallery row for each third project
-  if (index % 3 === 0) {
+  if (index % columns === 0) {
     galleryRow = document.createElement('div');
-    galleryRow.classList.add('gallery-row','row','mt-5');
+    galleryRow.classList.add('gallery-row','row');
     container.appendChild(galleryRow);
   } else {
     // Use the last appended row
     galleryRow = container.lastElementChild;
   }
   const projectContainer = document.createElement('div');
-  projectContainer.classList.add('project-container','col')
+  projectContainer.classList.add('project-container','col','col-12','col-md-6', 'col-lg-4', 'g-5')
 
   // Add the images
   if (product.fields.mainPicture) {

@@ -19,8 +19,7 @@ container.classList.add('carousel-inner')
 
 // const newDiv = document.createElement('div');
 
-function renderGallerySlideshow(product, index) {
-
+function renderGallerySlideshow(product, index, columns) {
   function normalizeUrl(url) {
     if (!url.startsWith('http')) {
       return `https:${url}`;
@@ -30,7 +29,7 @@ function renderGallerySlideshow(product, index) {
 
   let galleryImage;
   //Create a slideshow row for each third project
-  if (index % 3 === 0) {
+  if (index % columns === 0) {
     galleryImage = document.createElement('div');
     galleryImage.classList.add('gallery-image','carousel-item', 'row');
     galleryImage.classList.add('fades3d');
@@ -52,6 +51,7 @@ function renderGallerySlideshow(product, index) {
 
     const projectLink = document.createElement('a');
     projectLink.setAttribute('href', `project.html?product=${productId}`);
+    projectLink.classList.add('col');
     projectLink.classList.add('col');
     galleryImage.appendChild(projectLink);
 

@@ -83,14 +83,21 @@ function getRandomProducts(index) {
     bodyContainer.innerHTML = '';  // Clear any existing content
 
     let indicators=0
-
+    function getColumns() {
+        const width = window.innerWidth;
+        if (width <= 576) return 1;        // Mobile
+        if (width <= 992) return 2;        // Tablet  
+        return 3;                          // Desktop
+    }
+    
+    const columns = getColumns();
     entries.items.forEach(function (product, index) {
-      const productContent = renderGallerySlideshow(product, index);
+      const productContent = renderGallerySlideshow(product, index, columns);
 
       let dot;
       const adjustedIndex = index + 1
       //Create a slideshow row for each third project
-      if (index % 3 === 0) {
+      if (index % columns === 0) {
         dot = document.createElement('button');
         // dot.classList.add('dot');
         dot.setAttribute('data-bs-target', `#gallerySlideshow`)

@@ -30,6 +30,7 @@ async function newProduct(product) {
       projectImage = document.createElement('img');
       projectImage.setAttribute('style', 'width: 617px; height: 380px;')
       projectImage.classList.add("new-picture");
+      projectImage.classList.add('img-fluid');
       projectImage.setAttribute('src', `https:${newestProduct.fields.mainPicture.fields.file.url}`);
 
       project.appendChild(projectImage);

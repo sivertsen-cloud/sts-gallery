@@ -18,16 +18,31 @@ module.exports = function renderDuplexComponent(componentData) {
     const headline = document.createElement('h2');
     headline.textContent = componentData.fields.headline;
     headline.classList.add('row');
+    headline.classList.add('justify-content-center');
     container.appendChild(headline);
   }
 
   const contentContainer = document.createElement('div');
   contentContainer.classList.add('row');
+  contentContainer.classList.add('justify-content-center');
 
   const contentTextContainer = document.createElement('div');
   contentTextContainer.classList.add('text-decoration-none');
   contentTextContainer.classList.add('col-8');
   contentTextContainer.classList.add('text-start');
+  contentTextContainer.classList.add('order-md-1');
+
+  // Add the image
+  if (componentData.fields.image) {
+    const img = document.createElement('img');
+    img.src = normalizeUrl(componentData.fields.image.fields.file.url);
+    img.alt = componentData.fields.image.fields.title || '';  // Use title or empty string as alt text
+    img.classList.add('duplex-image');
+    img.classList.add('col-4');
+    img.classList.add('order-md-2');
+    img.setAttribute('style', 'width:300px; height:300px;')
+    contentContainer.appendChild(img);
+  }
 
   // Add the body text
   if (componentData.fields.bodyText) {
@@ -57,16 +72,7 @@ module.exports = function renderDuplexComponent(componentData) {
     });
   }
   contentContainer.appendChild(contentTextContainer);
-  // Add the image
-  if (componentData.fields.image) {
-    const img = document.createElement('img');
-    img.src = normalizeUrl(componentData.fields.image.fields.file.url);
-    img.alt = componentData.fields.image.fields.title || '';  // Use title or empty string as alt text
-    img.classList.add('duplex-image');
-    img.classList.add('col-4');
-    img.setAttribute('style', 'width:300px; height:300px;')
-    contentContainer.appendChild(img);
-  }
+
 
   container.appendChild(contentContainer);
   container.classList.add('mb-5')
