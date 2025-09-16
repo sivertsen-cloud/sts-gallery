@@ -162,3 +162,21 @@ div {
   border-color: var(--accent);
   color: var(--background);
 }
+
+/* .carousel-indicators img {
+  opacity: 0.3;
+  transition: opacity 0.3s ease-in-out;
+  filter: grayscale(50%);
+}
+
+.carousel-indicators img.active,
+.carousel-indicators img.show-adjacent {
+  opacity: 1;
+  filter: grayscale(0%);
+} */
+
+.carousel-indicators img.hide-distant {
+  /* opacity: 0.1; */
+  /* filter: grayscale(80%); */
+  display: none;
+}

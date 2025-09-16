@@ -10,6 +10,15 @@ const client = contentful.createClient({
   accessToken: process.env.CONTENTFUL_API_KEY  // API Key from environment variables
 });
 
+function getColumns() {
+    const width = window.innerWidth;
+    if (width <= 576) return 1;        // Mobile
+    if (width <= 992) return 2;        // Tablet  
+    return 3;                          // Desktop
+}
+
+const columns = getColumns();
+
 function getRandomProducts(productID) {
   // Step 1: Fetch all entries of type "product" excluding the one with the specified productID
   client.getEntries({
@@ -24,7 +33,7 @@ function getRandomProducts(productID) {
     products = shuffleArray(products);
 
     // Step 3: Select the first three products after shuffling
-    const selectedProducts = products.slice(0, 3);
+    const selectedProducts = products.slice(0, columns);
 
     const bodyContainer = document.querySelector('#other-projects');
     bodyContainer.classList.add('other-projects','container');

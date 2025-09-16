@@ -185,6 +185,21 @@ RightButton.appendChild(RightButtonText);
   slideshow.appendChild(LeftButton);
   slideshow.appendChild(RightButton);
   slideshow.appendChild(slideshowIndicator);
+  // Add this after slideshow.appendChild(slideshowIndicator);
+  slideshow.addEventListener('slide.bs.carousel', updateIndicatorVisibility);
+  slideshow.addEventListener('slid.bs.carousel', updateIndicatorVisibility);
+
+  // Also trigger when clicking indicators
+  document.querySelectorAll('#slideshowIndicator img').forEach(indicator => {
+    indicator.addEventListener('click', () => {
+      setTimeout(updateIndicatorVisibility, 0);
+    });
+  });
+
+  // Initial call
+  setTimeout(() => {
+    updateIndicatorVisibility();
+  }, 10);
   // container.appendChild(imagePreview);
 
 
@@ -224,5 +239,75 @@ RightButton.appendChild(RightButtonText);
 
   return container;
 };
+
+function getIndicators() {
+    const width = window.innerWidth;
+    if (width <= 576) return 5;        // Mobile
+    if (width <= 992) return 9;        // Tablet  
+    return 15;                          // Desktop
+}
+
+const indicators = getIndicators();
+
+function updateIndicatorVisibility() {
+  const carousel = document.getElementById('productCarousel');
+  const indicators = document.querySelectorAll('#slideshowIndicator img');
+  const carouselItems = carousel.querySelectorAll('.carousel-item');
+  const totalItems = indicators.length;
+  const maxVisible = getIndicators(); // Get responsive count
+  
+  if (totalItems <= maxVisible) {
+    // If total items <= max visible, show all
+    indicators.forEach(indicator => {
+      indicator.classList.remove('hide-distant');
+      indicator.classList.add('show-adjacent');
+    });
+    return;
+  }
+  
+  // Find the active item index
+  let activeIndex = 0;
+  carouselItems.forEach((item, index) => {
+    if (item.classList.contains('active')) {
+      activeIndex = index;
+    }
+  });
+  
+  // Calculate the window of images to show based on screen size
+  let startIndex, endIndex;
+  const halfVisible = Math.floor(maxVisible / 2);
+  
+  if (activeIndex < halfVisible) {
+    // At the beginning: show current + next (maxVisible-1)
+    startIndex = 0;
+    endIndex = maxVisible - 1;
+  } else if (activeIndex >= totalItems - halfVisible) {
+    // At the end: show current + previous (maxVisible-1)
+    startIndex = totalItems - maxVisible;
+    endIndex = totalItems - 1;
+  } else {
+    // In the middle: show balanced around current
+    startIndex = activeIndex - halfVisible;
+    endIndex = activeIndex + halfVisible;
+  }
+  
+  // Update indicator visibility
+  indicators.forEach((indicator, index) => {
+    indicator.classList.remove('show-adjacent', 'hide-distant');
+    
+    if (index >= startIndex && index <= endIndex) {
+      indicator.classList.add('show-adjacent');
+    } else {
+      indicator.classList.add('hide-distant');
+    }
+    
+    // Keep active styling for current indicator
+    if (index === activeIndex) {
+      indicator.classList.add('active');
+    } else {
+      indicator.classList.remove('active');
+    }
+  });
+}
 
 export default renderProductComponent;
